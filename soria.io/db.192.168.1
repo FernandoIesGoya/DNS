@@ -1,0 +1,15 @@
+;
+; BIND reverse data file for broadcast zone
+;
+$TTL	604800
+@	IN	SOA	ns1.soria.io. mail.soria.io. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+
+@       IN      NS  ns1.soria.io.  
+; @       IN      NS  ns2.soria.io.
+230      IN  PTR ns1.soria.io.
+231      IN  PTR www.soria.io.
