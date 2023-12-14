@@ -1,0 +1,26 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "lodares.soria.io"{
+type master;
+file "/etc/bind/db.lodares.soria.io";
+allow-transfer { 192.168.1.230 ;  };
+};
+
+zone 1.168.192.in-addr.arpa {
+type master;
+file "/etc/bind/zones/db.192.168.1";  
+allow-transfer { 192.168.1.230 ; };  
+};
+
+zone "soria.io"{
+type slave;
+file "db.soria.io";
+masters  {192.168.1.230; };
+allow-notify { 192.168.1.230; };
+};
